@@ -24,16 +24,16 @@ body {
 #sj-error-code { font-size: 12px; color: var(--ink); font-family: "Courier New", Courier, monospace; }
 
 .site-header {
-	background: rgba(251,250,255,.76);
+	background: transparent;
 	padding: 18px 12px;
-	border-left: 1px solid rgba(41,39,51,.08);
+	border-left: 1px solid transparent;
 	position: fixed;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	width: 190px;
 	z-index: 10;
-	backdrop-filter: blur(12px);
+	backdrop-filter: none;
 	transition: transform .2s ease;
 }
 .browser-tabs { display: flex; flex-direction: column; align-items: stretch; gap: 18px; min-height: 34px; height: 100%; }
@@ -55,7 +55,6 @@ nav a:hover { color: var(--signal); }
 .browser-address { background: rgba(255,255,255,.7); border: 1px solid rgba(41,39,51,.1); border-radius: 8px; color: var(--muted); font: 12px "DM Mono", monospace; margin: 5px 0 0; overflow: hidden; padding: 9px 10px; text-overflow: ellipsis; white-space: nowrap; writing-mode: vertical-rl; transform: rotate(180deg); max-height: 34vh; }
 .has-active-tab .site-header { transform: translateX(calc(100% - 18px)); }
 .has-active-tab .site-header:hover, .has-active-tab .site-header:focus-within { transform: translateX(0); }
-.has-active-tab.show-chrome .site-header { transform: translateX(0); }
 
 .hero { width: min(900px, calc(100% - 44px)); margin: 0 0 0 auto; padding: clamp(70px, 12vh, 140px) 0 54px; flex: 1; }
 .hero-copy { max-width: 760px; text-align: left; margin: 0 0 0 auto; }
