@@ -1,9 +1,9 @@
 :root {
-	--ink: #292733;
-	--paper: #e9e7f5;
-	--cream: #fbfaff;
-	--signal: #d94d58;
-	--muted: #777482;
+	--ink: #203332;
+	--paper: #dcebe4;
+	--cream: #fffaf0;
+	--signal: #c4573f;
+	--muted: #657773;
 }
 
 * { box-sizing: border-box; }
@@ -12,7 +12,7 @@ body {
 	font-family: "DM Sans", Arial, sans-serif;
 	margin: 0;
 	background: var(--paper);
-	background-image: linear-gradient(145deg, rgba(255,255,255,.24), transparent 43%), radial-gradient(circle at 75% 70%, rgba(255,220,217,.35), transparent 34%);
+	background-image: linear-gradient(145deg, rgba(255,255,255,.38), transparent 43%), radial-gradient(circle at 75% 70%, rgba(255,211,181,.34), transparent 34%);
 	color: var(--ink);
 	display: flex;
 	flex-direction: column;
