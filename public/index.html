@@ -6,13 +6,16 @@
 			name="viewport"
 			content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
 		/>
-		<title>Scramjet</title>
+		<title>Scramjet | Browse freely</title>
 
 		<link rel="shortcut icon" content="favicon.webp" />
 	
 		<script src="/scram/scramjet.all.js"></script>
 		<script src="/baremux/index.js"></script>
 		
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" href="index.css" />
 		<script src="register-sw.js" defer></script>
 		<script src="search.js" defer></script>
@@ -20,47 +23,69 @@
 	</head>
 
 	<body>
-		<div title="Scramjet Logo" class="flex-center logo-wrapper header-center">
-			<img class="logo" src="sj.png" alt="Scramjet" />
-			<h1>Scramjet | MW</h1>
-		</div>
-		<div class="flex-center desc left-margin">
-			<p>
-				Scramjet is an experimental interception based web proxy designed to
-				evade internet censorship, bypass arbitrary web browser restrictions and
-				innovate web proxy technologies.
-			</p>
-		</div>
+		<header class="site-header">
+			<div class="browser-tabs">
+				<a class="brand" href="/" aria-label="Scramjet home">
+					<img src="sj.png" alt="" />
+					<span>SCRAMJET</span>
+				</a>
+				<div id="tab-strip" class="tab-strip" aria-label="Open tabs">
+					<button id="close-all" class="close-all" type="button" aria-label="Close all tabs" hidden>×</button>
+					<button id="new-tab" class="tab-label" type="button" aria-label="Open a new tab">+</button>
+				</div>
+				<nav aria-label="Main navigation">
+					<a href="https://github.com/MercuryWorkshop" target="_blank" rel="noreferrer">Project</a>
+					<a href="credits.html">Credits</a>
+				</nav>
+			</div>
+			<div id="browser-address" class="browser-address" hidden></div>
+		</header>
 
-		<form id="sj-form" class="flex-center">
+		<main class="hero">
+			<div class="hero-copy">
+				<p class="eyebrow"><span></span> Scramjet start page</p>
+			</div>
+
+			<form id="sj-form">
 			<input
 				id="sj-search-engine"
 				value="https://www.google.com/search?q=%s"
 				type="hidden"
 			/>
-			<input id="sj-address" type="text" placeholder="Search the web freely" />
-		</form>
-		<div class="desc left-margin">
-			<p id="sj-error"></p>
-			<pre id="sj-error-code"></pre>
+				<div class="search-shell">
+					<span class="search-icon" aria-hidden="true">↗</span>
+					<input id="sj-address" type="text" placeholder="Search or enter a web address" autocomplete="off" />
+					<button type="submit" aria-label="Open destination">Go <span aria-hidden="true">↗</span></button>
+				</div>
+			</form>
+			<div class="desc">
+				<p id="sj-error"></p>
+				<pre id="sj-error-code"></pre>
+			</div>
+
+			<div class="shortcuts" aria-label="Quick links">
+				<a href="https://www.google.com" target="_blank" rel="noreferrer"><strong>G</strong><span>Google</span></a>
+				<a href="https://www.youtube.com" target="_blank" rel="noreferrer"><strong>Y</strong><span>YouTube</span></a>
+				<a href="https://www.reddit.com" target="_blank" rel="noreferrer"><strong>R</strong><span>Reddit</span></a>
+				<a href="https://github.com" target="_blank" rel="noreferrer"><strong>GH</strong><span>GitHub</span></a>
+				<a href="https://discord.com" target="_blank" rel="noreferrer"><strong>D</strong><span>Discord</span></a>
 		</div>
+
+			<div class="widgets">
+				<section class="widget"><span class="widget-label">Welcome</span><strong>Ready when<br />you are.</strong><small>Start a private session above.</small></section>
+				<section class="widget"><span class="widget-label">Status</span><strong><i></i> Proxy online</strong><small>Scramjet is ready to browse.</small></section>
+			</div>
+
+			<div class="signal-row" aria-label="Scramjet features">
+				<a href="https://www.google.com" target="_blank" rel="noreferrer"><b>01</b> Search</a>
+				<a href="https://github.com/MercuryWorkshop" target="_blank" rel="noreferrer"><b>02</b> Open source</a>
+				<a href="credits.html"><b>03</b> About Scramjet</a>
+			</div>
+		</main>
+
 		<footer>
-			<div>
-				<a
-					title="The Mercury Workshop GitHub organization"
-					href="https://github.com/MercuryWorkshop"
-					>Mercury Workshop</a
-				>
-				<a
-					title="The example demo app for Scramjet"
-					href="https://github.com/MercuryWorkshop/Scramjet-Demo"
-					>GitHub</a
-				>
-				<a title="License information" href="credits.html">Credits</a>
-			</div>
-			<div>
-				<span>Scramjet &copy; MW 2025</span>
-			</div>
+			<span>SCRAMJET / MERCURY WORKSHOP</span>
+			<span>Experimental interception-based proxy <i></i> 2025</span>
 		</footer>
 	</body>
 </html>
