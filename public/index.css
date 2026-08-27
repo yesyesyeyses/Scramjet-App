@@ -26,10 +26,10 @@ body {
 .site-header {
 	background: transparent;
 	padding: 18px 12px;
-	border-left: 1px solid transparent;
+	border-right: 1px solid transparent;
 	position: fixed;
 	top: 0;
-	right: 0;
+	left: 0;
 	bottom: 0;
 	width: 190px;
 	z-index: 10;
@@ -53,7 +53,13 @@ nav { display: flex; gap: 16px; margin-top: auto; padding: 16px 8px 0; }
 nav a { color: var(--muted); text-decoration: none; font-size: 13px; }
 nav a:hover { color: var(--signal); }
 .browser-address { background: rgba(255,255,255,.7); border: 1px solid rgba(41,39,51,.1); border-radius: 8px; color: var(--muted); font: 12px "DM Mono", monospace; margin: 5px 0 0; overflow: hidden; padding: 9px 10px; text-overflow: ellipsis; white-space: nowrap; writing-mode: vertical-rl; transform: rotate(180deg); max-height: 34vh; }
-.has-active-tab .site-header { transform: translateX(calc(100% - 18px)); }
+.has-active-tab .site-header {
+	left: auto;
+	right: 0;
+	border-right: 0;
+	border-left: 1px solid transparent;
+	transform: translateX(calc(100% - 18px));
+}
 .has-active-tab .site-header:hover, .has-active-tab .site-header:focus-within { transform: translateX(0); }
 
 .hero { width: min(900px, calc(100% - 44px)); margin: 0 0 0 auto; padding: clamp(70px, 12vh, 140px) 0 54px; flex: 1; }
