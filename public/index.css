@@ -49,7 +49,7 @@ body {
 .close-tab:hover { background: rgba(217,77,88,.18); color: var(--signal); }
 .tab-button.active, .tab-label:hover { background: var(--signal); color: white; }
 .tab-button:hover { background: rgba(217,77,88,.35); color: var(--ink); }
-.home-status { min-height: 0; padding: 10px 8px; border: 1px solid rgba(41,39,51,.12); border-radius: 8px; background: rgba(251,250,255,.35); box-shadow: none; }
+.home-status { width: 100%; min-height: 40px; padding: 11px 12px; border: 1px solid rgba(41,39,51,.12); border-radius: 8px; background: rgba(251,250,255,.35); box-shadow: none; }
 .home-status .widget-label { margin-bottom: 8px; }
 .home-status strong { display: block; font: 600 13px/1.1 "DM Sans", sans-serif; white-space: nowrap; }
 .home-status small { display: block; margin-top: 7px; font-size: 10px; line-height: 1.2; }
