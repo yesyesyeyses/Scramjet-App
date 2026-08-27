@@ -47,7 +47,7 @@ function showLanding() {
 	document.body.classList.remove("has-active-tab");
 	document.body.classList.remove("show-chrome");
 	landing.hidden = false;
-	footer.hidden = false;
+	if (footer) footer.hidden = false;
 	browserAddress.hidden = true;
 	address.value = "";
 	for (const tab of tabs) {
@@ -61,7 +61,7 @@ function activateTab(tab) {
 	activeTab = tab;
 	document.body.classList.add("has-active-tab");
 	landing.hidden = true;
-	footer.hidden = true;
+	if (footer) footer.hidden = true;
 	browserAddress.hidden = false;
 	browserAddress.textContent = tab.url;
 	for (const item of tabs) {
@@ -128,31 +128,32 @@ document.addEventListener("mousemove", (event) => {
 
 form.addEventListener("submit", async (event) => {
 	event.preventDefault();
+	error.textContent = "";
+	errorCode.textContent = "";
 
 	try {
 		await registerSW();
+		const url = search(address.value.trim(), searchEngine.value);
+
+		let wispUrl =
+			(location.protocol === "https:" ? "wss" : "ws") +
+			"://" +
+			location.host +
+			"/wisp/";
+		if ((await connection.getTransport()) !== "/libcurl/index.mjs") {
+			await connection.setTransport("/libcurl/index.mjs", [
+				{ websocket: wispUrl },
+			]);
+		}
+		const frame = scramjet.createFrame();
+		frame.frame.id = `sj-frame-${tabs.length + 1}`;
+		frame.frame.classList.add("sj-frame");
+		document.body.appendChild(frame.frame);
+		addTab(frame, url);
+		frame.go(url);
 	} catch (err) {
-		error.textContent = "Failed to register service worker.";
+		error.textContent = "Could not open that address.";
 		errorCode.textContent = err.toString();
-		throw err;
+		showLanding();
 	}
-
-	const url = search(address.value, searchEngine.value);
-
-	let wispUrl =
-		(location.protocol === "https:" ? "wss" : "ws") +
-		"://" +
-		location.host +
-		"/wisp/";
-	if ((await connection.getTransport()) !== "/libcurl/index.mjs") {
-		await connection.setTransport("/libcurl/index.mjs", [
-			{ websocket: wispUrl },
-		]);
-	}
-	const frame = scramjet.createFrame();
-	frame.frame.id = `sj-frame-${tabs.length + 1}`;
-	frame.frame.classList.add("sj-frame");
-	document.body.appendChild(frame.frame);
-	addTab(frame, url);
-	frame.go(url);
 });
