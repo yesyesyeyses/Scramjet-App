@@ -49,6 +49,11 @@ body {
 .close-tab:hover { background: rgba(217,77,88,.18); color: var(--signal); }
 .tab-button.active, .tab-label:hover { background: var(--signal); color: white; }
 .tab-button:hover { background: rgba(217,77,88,.35); color: var(--ink); }
+.home-status { min-height: 0; padding: 10px 8px; border: 1px solid rgba(41,39,51,.12); border-radius: 8px; background: rgba(251,250,255,.35); box-shadow: none; }
+.home-status .widget-label { margin-bottom: 8px; }
+.home-status strong { display: block; font: 600 13px/1.1 "DM Sans", sans-serif; white-space: nowrap; }
+.home-status small { display: block; margin-top: 7px; font-size: 10px; line-height: 1.2; }
+.has-active-tab .home-status { display: none; }
 nav { display: flex; gap: 16px; margin-top: auto; padding: 16px 8px 0; }
 nav a { color: var(--muted); text-decoration: none; font-size: 13px; }
 nav a:hover { color: var(--signal); }
@@ -81,12 +86,7 @@ button span { font-size: 17px; margin-left: 8px; }
 button:hover { background: var(--ink); }
 .desc { min-height: 0; }
 .desc p { max-width: 760px; color: var(--signal); font-size: 13px; margin: 25px 0 0; }
-.shortcuts { display: flex; justify-content: center; gap: 22px; margin-top: 38px; }
-.shortcuts a { color: var(--ink); text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 8px; min-width: 62px; font-size: 11px; }
-.shortcuts strong { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 12px; background: rgba(251,250,255,.8); border: 1px solid rgba(41,39,51,.1); box-shadow: 0 3px 10px rgba(41,39,51,.08); color: var(--signal); font-size: 15px; }
-.shortcuts a:hover strong { background: var(--signal); color: var(--cream); transform: translateY(-2px); }
-.widgets { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; max-width: 620px; margin: 45px auto 0; }
-.widget { min-height: 126px; padding: 17px 20px; border: 1px solid rgba(41,39,51,.12); border-radius: 9px; background: rgba(251,250,255,.48); box-shadow: 0 4px 14px rgba(41,39,51,.06); display: flex; flex-direction: column; text-align: left; }
+.widget { display: flex; flex-direction: column; text-align: left; }
 .widget-label { color: var(--muted); font: 10px "DM Mono", monospace; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 15px; }
 .widget strong { font: 600 21px/1.05 "Playfair Display", Georgia, serif; }
 .widget small { color: var(--muted); margin-top: auto; font-size: 11px; }
@@ -114,10 +114,6 @@ footer i { display: inline-block; width: 5px; height: 5px; background: var(--sig
 	.intro { font-size: 15px; margin-bottom: 38px; }
 	.search-shell { padding-left: 12px; }
 	button { padding: 0 14px; }
-	.shortcuts { gap: 10px; }
-	.shortcuts a { min-width: 50px; }
-	.shortcuts strong { width: 38px; height: 38px; }
-	.widgets { grid-template-columns: 1fr; margin-top: 35px; }
 	.signal-row { display: grid; gap: 14px; margin-top: 75px; }
 	footer { flex-direction: column; line-height: 1.5; }
 }
