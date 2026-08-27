@@ -67,8 +67,7 @@ nav a:hover { color: var(--signal); }
 }
 .has-active-tab .site-header:hover, .has-active-tab .site-header:focus-within { transform: translateX(0); }
 
-.hero { width: min(900px, calc(100% - 44px)); margin: 0 auto; padding: clamp(70px, 12vh, 140px) 0 54px; flex: 1; }
-.hero-copy { max-width: 760px; text-align: center; margin: 0 auto; }
+.hero { width: min(900px, calc(100% - 44px)); margin: 0 auto; padding: 44px 0; flex: 1; display: flex; flex-direction: column; justify-content: center; }
 .eyebrow { color: var(--signal); text-transform: uppercase; letter-spacing: .14em; font: 500 11px "DM Mono", monospace; }
 .eyebrow span { display: inline-block; width: 7px; height: 7px; background: var(--signal); border-radius: 50%; margin: 0 10px 1px 0; }
 h1 { font: 600 clamp(48px, 7vw, 86px)/.91 "Playfair Display", Georgia, serif; margin: 25px 0 20px; }
