@@ -62,15 +62,15 @@ nav a:hover { color: var(--signal); }
 }
 .has-active-tab .site-header:hover, .has-active-tab .site-header:focus-within { transform: translateX(0); }
 
-.hero { width: min(900px, calc(100% - 44px)); margin: 0 0 0 auto; padding: clamp(70px, 12vh, 140px) 0 54px; flex: 1; }
-.hero-copy { max-width: 760px; text-align: left; margin: 0 0 0 auto; }
+.hero { width: min(900px, calc(100% - 44px)); margin: 0 auto; padding: clamp(70px, 12vh, 140px) 0 54px; flex: 1; }
+.hero-copy { max-width: 760px; text-align: center; margin: 0 auto; }
 .eyebrow { color: var(--signal); text-transform: uppercase; letter-spacing: .14em; font: 500 11px "DM Mono", monospace; }
 .eyebrow span { display: inline-block; width: 7px; height: 7px; background: var(--signal); border-radius: 50%; margin: 0 10px 1px 0; }
 h1 { font: 600 clamp(48px, 7vw, 86px)/.91 "Playfair Display", Georgia, serif; margin: 25px 0 20px; }
 h1 em { color: var(--signal); font-style: normal; }
 .intro { max-width: 470px; color: var(--muted); font-size: 16px; line-height: 1.55; margin: 0 auto 48px; }
 
-#sj-form { max-width: 760px; margin-left: auto; }
+#sj-form { max-width: 760px; margin: 0 auto; }
 .search-shell { background: var(--cream); border: 1px solid rgba(41,39,51,.16); border-radius: 18px; display: flex; align-items: center; min-height: 64px; padding: 6px 7px 6px 20px; box-shadow: 0 5px 20px rgba(41,39,51,.12); }
 .search-icon { color: var(--signal); font-size: 23px; transform: rotate(-45deg); display: inline-block; }
 #sj-address { background: none; font: 16px "DM Sans", sans-serif; padding: 0 14px; height: 52px; border: 0; color: var(--ink); outline: none; width: 100%; }
