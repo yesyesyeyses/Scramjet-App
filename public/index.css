@@ -74,7 +74,7 @@ h1 { font: 600 clamp(48px, 7vw, 86px)/.91 "Playfair Display", Georgia, serif; ma
 h1 em { color: var(--signal); font-style: normal; }
 .intro { max-width: 470px; color: var(--muted); font-size: 16px; line-height: 1.55; margin: 0 auto 48px; }
 
-#sj-form { max-width: 760px; margin: 0 auto; }
+#sj-form { width: 100%; max-width: 900px; margin: 0 auto; }
 .search-shell { background: var(--cream); border: 1px solid rgba(41,39,51,.16); border-radius: 18px; display: flex; align-items: center; min-height: 64px; padding: 6px 7px 6px 20px; box-shadow: 0 5px 20px rgba(41,39,51,.12); }
 .search-icon { color: var(--signal); font-size: 23px; transform: rotate(-45deg); display: inline-block; }
 #sj-address { background: none; font: 16px "DM Sans", sans-serif; padding: 0 14px; height: 52px; border: 0; color: var(--ink); outline: none; width: 100%; }
